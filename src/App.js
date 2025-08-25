@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+
+// Importa as páginas completas que serão renderizadas pelas rotas
+import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
+import CadastroPage from './pages/CadastroPage';
+import DashboardPage from './pages/DashboardPage';
+
+
+// Componentes Fixos
+import SideMenu from './componentes/SideMenu';
+import TopMenu from './componentes/TopMenu';
+import Footer from './componentes/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <TopMenu />
+      <SideMenu />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/cadastro" element={<CadastroPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

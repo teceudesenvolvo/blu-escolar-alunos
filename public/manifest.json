@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Blu Escola", // Nome exibido na tela inicial
+  "name": "Blu Escola - Portal do Aluno", // Nome completo
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +19,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "standalone", // Oculta a barra de endereço do navegador
+  "theme_color": "#000000", // Cor do cabeçalho do app
+  "background_color": "#ffffff" // Cor da tela de inicialização
 }
