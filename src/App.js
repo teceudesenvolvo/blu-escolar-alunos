@@ -10,6 +10,8 @@ import CadastroPage from './pages/CadastroPage';
 import DashboardPage from './pages/DashboardPage';
 import Perfil from './pages/Perfil';
 import Notificacoes from './pages/Notificacoes';
+import AddStudentPage from './pages/AdicionarAluno';
+import EditStudentPage from './pages/EditarAluno';
 
 // Componentes Fixos
 import SideMenu from './componentes/SideMenu';
@@ -31,6 +33,8 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/notificacoes" element={<Notificacoes />} />
+        <Route path="/pre-matricula-aluno" element={<AddStudentPage />} />
+        <Route path="/editar-aluno" element={<EditStudentPage />} />  
 
       </Routes>
       <Footer />

@@ -5,7 +5,7 @@ import TeacherImage from '../assets/professora-2.png';
 
 // Dados de exemplo para os cards de estatísticas
 const stats = [
-    { value: '85%', label: 'Documentação Enviada', icon: <FiFileText />, color: '#F1CC5A' },
+    { value: '85%', label: 'Documentação', icon: <FiFileText />, color: '#F1CC5A' },
     { value: '02', label: 'Alunos', icon: <FiUsers />, color: '#556080' },
     { value: '04', label: 'Material Escolar', icon: <FiBook />, color: '#4C50F5' },
     { value: '15', label: 'Livros', icon: <FiBookOpen />, color: '#8890D0' },
@@ -42,7 +42,7 @@ function DashboardPage() {
     // Função para lidar com o clique no botão "Editar Aluno"
     const handleEditStudent = (studentName) => {
         // Redireciona para a página de edição, passando o nome do aluno como parâmetro de URL
-        navigate(`/aluno-pais-edit`);
+        navigate(`/editar-aluno?aluno=${encodeURIComponent(studentName)}`);
     };
 
     return (
