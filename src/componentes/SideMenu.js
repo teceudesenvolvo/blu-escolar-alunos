@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { FiHome, FiLogIn, FiUserPlus } from 'react-icons/fi';
+import { FiHome, FiUser, FiBell } from 'react-icons/fi';
 
 const SideMenu = () => {
   // Use o hook useLocation para obter a rota atual
   const location = useLocation();
 
   // Rotas onde o menu lateral não deve aparecer
-  const pagesNotViewMenu = ['/login', '/cadastro'];
+  const pagesNotViewMenu = ['/login', '/cadastro', '/'];
 
   // Se a rota atual estiver na lista, não renderize o menu
   if (pagesNotViewMenu.includes(location.pathname)) {
@@ -17,7 +17,7 @@ const SideMenu = () => {
   return (
     <aside className="fixed-nav-bar">
       <NavLink 
-        to="/" 
+        to="/dashboard" 
         className={({ isActive }) => 
           "nav-item" + (isActive ? " active" : "")
         }
@@ -26,22 +26,22 @@ const SideMenu = () => {
         <span className="nav-text">Início</span>
       </NavLink>
       <NavLink 
-        to="/cadastro" 
+        to="/notificacoes" 
         className={({ isActive }) => 
           "nav-item" + (isActive ? " active" : "")
         }
       >
-        <FiUserPlus className="nav-icon" />
-        <span className="nav-text">Cadastre-se</span>
+        <FiBell className="nav-icon" />
+        <span className="nav-text">Notificações</span>
       </NavLink>
       <NavLink 
-        to="/login" 
+        to="/perfil" 
         className={({ isActive }) => 
           "nav-item" + (isActive ? " active" : "")
         }
       >
-        <FiLogIn className="nav-icon" />
-        <span className="nav-text">Entrar</span>
+        <FiUser className="nav-icon" />
+        <span className="nav-text">Perfil</span>
       </NavLink>
     </aside>
   );

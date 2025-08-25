@@ -6,8 +6,10 @@ import './App.css';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import CadastroPage from './pages/CadastroPage';
-import DashboardPage from './pages/DashboardPage';
 
+import DashboardPage from './pages/DashboardPage';
+import Perfil from './pages/Perfil';
+import Notificacoes from './pages/Notificacoes';
 
 // Componentes Fixos
 import SideMenu from './componentes/SideMenu';
@@ -20,10 +22,16 @@ function App() {
       <TopMenu />
       <SideMenu />
       <Routes>
+        {/* Without Login */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/cadastro" element={<CadastroPage />} />
+        
+        {/* With Login */}
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/notificacoes" element={<Notificacoes />} />
+
       </Routes>
       <Footer />
       <div className="footer-bottom">

@@ -83,12 +83,12 @@ function DashboardPage() {
                 {/* Lista de Alunos vinda do backend */}
                 <div className="student-list">
                     {students.map((student, index) => (
-                        <div key={index} className="student-card">
+                        <div onClick={() => handleEditStudent(student.name)} key={index} className="student-card">
                             <div className="student-info">
                                 <div className="student-avatar">
                                     <img src={student.avatar} alt="Student avatar" />
                                 </div>
-                                <div className="student-details">
+                                <div className="student-details" >
                                     {/* Dados básicos do aluno */}
                                     <h3 onClick={() => handleEditStudent(student.name)} >{student.name}</h3>
                                     <p>Idade: {student.age} Anos</p>
