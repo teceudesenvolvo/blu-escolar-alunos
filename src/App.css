@@ -48,49 +48,107 @@ body {
 .main-content {
   flex-grow: 1;
   margin-left: 80px;
+  margin-top: 50px;
   /* Espaço para a barra de navegação lateral */
 }
 
 /* Barra de navegação lateral fixa SideMenu */
+/* Barra de navegação lateral fixa */
 .fixed-nav-bar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 80px;
-  background-color: #7076E8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #556080;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+    z-index: 1000;
 }
 
-.nav-icon-wrapper {
-  margin-bottom: 30px;
-  padding: 10px;
-  border-radius: 12px;
-  transition: background-color 0.3s;
-  cursor: pointer;
+/* Estado de hover para expandir o menu */
+/* Barra de navegação lateral fixa */
+.fixed-nav-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 60px;
+    background-color: #7076E8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; /* Ajustado para padding top/bottom */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+    z-index: 1000;
 }
 
-.nav-icon-wrapper.active {
-  background-color: #F7859D;
+/* Estado de hover para expandir o menu */
+.fixed-nav-bar:hover {
+    width: 215px;
 }
 
-.nav-icon-wrapper svg {
-  color: white;
+.nav-item {
+    display: flex;
+    align-items: center;
+    width: 25px; /* Largura fixa quando recolhido */
+    padding: 10px 15px;
+    border-radius: 12px 0 0 12px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, width 0.3s ease, padding 0.3s ease;
 }
+
+.fixed-nav-bar:hover .nav-item {
+    width: 180px; /* Largura expandida no hover */
+    padding: 10px 15px;
+}
+
+.nav-item:hover {
+    background-color: #00067E;
+}
+
+.nav-item.active {
+    background-color: #F7859D;
+}
+
+.nav-icon {
+    font-size: 24px;
+    min-width: 24px; /* Garante que o ícone não encolha */
+    margin-right: 15px;
+}
+
+.nav-text {
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fixed-nav-bar:hover .nav-text {
+    opacity: 1;
+}
+
 
 /* Estilização do TopMenu */
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
   padding: 20px 40px;
-  background-color: #7076E8 ;
+  background-color: #7076E8;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -308,212 +366,164 @@ body {
   border-radius: 12px;
 }
 
-/* Rodapé */
-.footer {
-  background-color: #2F3657;
-  color: #A9B0C5;
-  padding: 40px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.footer-links-wrapper {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.footer-column h4 {
-  color: #FFFFFF;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column li {
-  margin-bottom: 10px;
-}
-
-.footer-column a {
-  text-decoration: none;
-  color: #A9B0C5;
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-
-.footer-column a:hover {
-  color: #4C50F5;
-}
-
-.footer-contact-info .logomarca {
-  color: #FFFFFF;
-}
-
-.footer-contact-info p {
-  font-size: 0.9rem;
-  margin: 5px 0;
-}
-
-.footer-contact-info a {
-  color: #A9B0C5;
-  text-decoration: none;
-}
-
-.footer-bottom-bar {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #4D536B;
-  margin-top: 40px;
-  font-size: 0.8rem;
-}
-
 /* Estilização da página de login */
 .login-container {
-    display: flex;
-    height: 100vh;
-    font-family: 'Inter', sans-serif;
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Lado esquerdo da página (background roxo) */
 .login-left {
-    flex-basis: 50%;
-    background-color: #7076E8;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 10%;
-    position: relative;
+  flex-basis: 50%;
+  background-color: #7076E8;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  position: relative;
 }
 
 .login-header {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 40px;
-    left: 40px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 
 .logo-heart svg {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .logomarca {
-    font-weight: 700;
-    font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .login-greeting {
-    margin-top: 150px;
-    padding-left: 20px;
+  margin-top: 150px;
+  padding-left: 20px;
 }
 
 .login-greeting h1 {
-    font-size: 70px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.login-greeting>p {
+  font-size: 18px;
+  margin-top: -30px;
+  width: 70%;
 }
 
 /* Lado direito da página (formulário de login) */
 .login-right {
-    flex-basis: 60%;
-    background-color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
+  flex-basis: 60%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
 .login-form-card {
-    padding: 40px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 450px;
-    text-align: center;
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
 }
 
 .login-form-card h2 {
-    font-size: 1.5rem;
-    color: #556080;
-    margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: #556080;
+  margin-bottom: 30px;
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
-    text-align: left;
+  text-align: left;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: transparent;
-    font-weight: 500;
-    font-size: 5px;
+.form-group>label {
+  display: block;
+  margin-bottom: 5px;
+  color: transparent;
+  font-weight: 500;
+  font-size: 5px;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 12px;
-    border: none  ;
-    border-bottom: 1px solid #ddd;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
 .form-group input:focus {
-    outline: none;
-    border-color: #4C50F5;
+  outline: none;
+  border-color: #4C50F5;
 }
 
 .form-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .forgot-password {
-    color: #F7859D;
-    text-decoration: none;
-    font-size: 0.9rem;
+  color: #F7859D;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 .btn-login {
-    padding: 12px 30px;
-    background-color: #4C50F5;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
+  padding: 12px 30px;
+  background-color: #4C50F5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .btn-login:hover {
-    background-color: #3a3fcc;
+  background-color: #3a3fcc;
+}
+
+.btn-cadastrar {
+  margin-top: 20px;
 }
 
 .register-link {
-    margin-top: 20px;
-    font-size: 0.9rem;
+  margin-top: 20px;
+  font-size: 0.9rem;
 }
 
 .register-link a {
-    color: #7076E8;
-    text-decoration: none;
-    font-weight: 500;
-    text-decoration: underline;
+  color: #7076E8;
+  text-decoration: none;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
+.login-link {
+  margin-top: 20px;
+  color: #7076E8;
+  text-decoration: underline;
+}
 
 
 
@@ -552,11 +562,9 @@ body {
 
 /* Rodapé */
 .footer {
-  background-color: #2F3657;
+  background-color: #7076E8;
   color: #A9B0C5;
-  padding: 40px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  padding-top: 40px;
 }
 
 .footer-links-wrapper {
@@ -608,8 +616,13 @@ body {
 
 .footer-bottom-bar {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #4D536B;
+  background-color: #00067E;
   margin-top: 40px;
   font-size: 0.8rem;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  color: white;
 }

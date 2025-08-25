@@ -52,7 +52,7 @@ function LandingPage() {
                         <a href="#saiba-mais" className="learn-more-link">Saiba Mais</a>
                     </div>
                     <div className="info-image">
-                        <img src="https://placehold.co/600x400/F1F5FE/333333?text=Dashboard" alt="Dashboard preview" />
+                        <img src="https://placehold.co/600x400/F1F5FE/333333?text=Imagem" alt="Dashboard preview" />
                     </div>
                 </section>
 
