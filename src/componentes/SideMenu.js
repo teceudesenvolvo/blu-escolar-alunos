@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { FiHome, FiUser, FiSettings } from 'react-icons/fi';
+import { FiHome, FiLogIn, FiUserPlus } from 'react-icons/fi';
 
 const SideMenu = () => {
   // Use o hook useLocation para obter a rota atual
@@ -26,22 +26,22 @@ const SideMenu = () => {
         <span className="nav-text">Início</span>
       </NavLink>
       <NavLink 
-        to="/dashboard" 
+        to="/cadastro" 
         className={({ isActive }) => 
           "nav-item" + (isActive ? " active" : "")
         }
       >
-        <FiUser className="nav-icon" />
-        <span className="nav-text">Dashboard</span>
+        <FiUserPlus className="nav-icon" />
+        <span className="nav-text">Cadastre-se</span>
       </NavLink>
       <NavLink 
-        to="/settings" 
+        to="/login" 
         className={({ isActive }) => 
           "nav-item" + (isActive ? " active" : "")
         }
       >
-        <FiSettings className="nav-icon" />
-        <span className="nav-text">Configurações</span>
+        <FiLogIn className="nav-icon" />
+        <span className="nav-text">Entrar</span>
       </NavLink>
     </aside>
   );

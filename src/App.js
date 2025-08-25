@@ -26,6 +26,9 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
       <Footer />
+      <div className="footer-bottom">
+        <p>Desenvolvido por Blu Tecnologias</p>
+      </div>
     </BrowserRouter>
   );
 }
