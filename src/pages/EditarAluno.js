@@ -24,7 +24,8 @@ const EditStudentPage = () => {
         alert('Mensagem enviada!');
     };
 
-   
+    // Função para simular a mudança de imagem
+    
 
     // Pendências simuladas
     const pendingSituations = [
@@ -67,7 +68,7 @@ const EditStudentPage = () => {
                         <span>12:30 - 10/11/2025</span>
                     </div>
                     <div className="message-input-container">
-                        <input type="text" placeholder="Digite uma mensagem para a secretaria." />
+                        <input type="text" placeholder="Digite uma mensagem ao responsável." />
                         <button onClick={handleSendMessage}>Enviar</button>
                     </div>
                 </div>
@@ -169,6 +170,131 @@ const EditStudentPage = () => {
                                     <option>Divorciado</option>
                                     <option>Viúvo</option>
                                 </select>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'endereco' && (
+                        <div className="form-section">
+                            <div className="input-group">
+                                <label>CEP</label>
+                                <input type="text" placeholder="CEP" />
+                            </div>
+                            <div className="input-group">
+                                <label>Bairro</label>
+                                <input type="text" placeholder="Bairro" />
+                            </div>
+                            <div className="input-group">
+                                <label>Logradouro</label>
+                                <input type="text" placeholder="Logradouro" />
+                            </div>
+                            <div className="input-group">
+                                <label>Cidade</label>
+                                <input type="text" placeholder="Cidade" />
+                            </div>
+                            <div className="input-group">
+                                <label>Número</label>
+                                <input type="text" placeholder="Número" />
+                            </div>
+                            <div className="input-group">
+                                <label>Estado</label>
+                                <input type="text" placeholder="Estado" />
+                            </div>
+                            <div className="input-group">
+                                <label>Complemento</label>
+                                <input type="text" placeholder="Complemento" />
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'escolares' && (
+                        <div className="form-section">
+                            <div className="input-group">
+                                <label>Ano Letivo</label>
+                                <input type="text" placeholder="Ano Letivo" />
+                            </div>
+                            <div className="input-group">
+                                <label>Nome da Última Escola</label>
+                                <input type="text" placeholder="Nome da Última Escola" />
+                            </div>
+                            <div className="input-group">
+                                <label>Série/Ano Escolar</label>
+                                <input type="text" placeholder="Série/Ano Escolar" />
+                            </div>
+                            <div className="input-group">
+                                <label>Alergias</label>
+                                <textarea placeholder="Alergias"></textarea>
+                            </div>
+                            <div className="input-group">
+                                <label>Turno</label>
+                                <input type="text" placeholder="Turno" />
+                            </div>
+                            <div className="input-group">
+                                <label>Uso de Medicamentos</label>
+                                <textarea placeholder="Uso de Medicamentos"></textarea>
+                            </div>
+                            <div className="input-group">
+                                <label>Situação de Matrícula Anterior</label>
+                                <input type="text" placeholder="Situação de Matrícula Anterior" />
+                            </div>
+                            <div className="input-group">
+                                <label>Observações Médicas</label>
+                                <textarea placeholder="Observações Médicas"></textarea>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'documentacao' && (
+                        <div className="form-section documentacao-section">
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Foto Oficial do Aluno</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>CPF</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Carteira de identidade (RG)</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Histórico Escolar ou Declaração de Escolaridade</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Carteira de Vacinação atualizada</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Certidão de Nascimento</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Comprovante de residência atualizado</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Comprovante de renda familiar</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Laudo médico</span>
+                            </div>
+                            <div className="document-card">
+                                <img src="https://placehold.co/100x100?text=Upload" alt="Upload Icon" />
+                                <p>Anexar</p>
+                                <span>Número de Identificação Social (NIS)</span>
                             </div>
                         </div>
                     )}
