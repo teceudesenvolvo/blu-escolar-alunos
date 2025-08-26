@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage() {
+    const navigate = useNavigate();
+
     return (
         <div className="login-container">
             <div className="login-left">
@@ -24,7 +26,7 @@ function LoginPage() {
                         </div>
                         <div className="form-actions">
                             <Link to="#" className="forgot-password">Esqueceu sua senha?</Link>
-                            <button type="submit" className="btn-login">Entrar</button>
+                            <button onClick={() => navigate('/dashboard')} type="submit" className="btn-login">Entrar</button>
                         </div>
                     </form>
                     <div className="register-link">

@@ -1,9 +1,13 @@
 import React from 'react';
-import Person3d from '../assets/teacher.webp';
+import { useNavigate } from 'react-router-dom';
+
+import Person3d from '../assets/estudante-bolsa.png';
 import Books1 from '../assets/books-1.png';
 import Books2 from '../assets/books-2.webp';
 
 function LandingPage() {
+    const navigate = useNavigate();
+
     return (
         <div className="landing-page-container">
             <div className="main-content">
@@ -12,6 +16,10 @@ function LandingPage() {
                     <div className="hero-content">
                         <p>A Secretaria Municipal de Educação inovou mais uma vez, agora conseguimos te ajudar a realizar a matrícula do seu filho sem sair de casa.</p>
                         <h1><b>INOVAR E EDUCAR</b> É NOSSA <b>MISSÃO</b></h1>
+                        <div>
+                            <input onClick={() => navigate('/cadastro')} type="button" value="Criar Conta" className="btn-hero-home" />
+                            <input onClick={() => navigate('/login')} type="button" value="Login" className="btn-hero-home" />
+                        </div>
                     </div>
                     <div className="hero-image">
                         <img src={Person3d} alt="3D character" />
@@ -19,7 +27,7 @@ function LandingPage() {
                 </section>
 
                 <section className="features-section">
-                    <a href='/cadastro' className="feature-card"a>
+                    <a href='/cadastro' className="feature-card" a>
                         <div className="icon-container-1">
                             <img src={Books1} alt="Books icon" />
                         </div>

@@ -37,7 +37,7 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #F8F9FA;
+  background-color: #fff;
   color: #333;
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 .hero-content {
-  max-width: 30%;
+  max-width: 50%;
   justify-content: center;
   height: 400px;
   display: flex;
@@ -208,16 +208,34 @@ body {
   width: 70%;
 }
 
+.btn-hero-home {
+  width: 20%;
+  height: 40px;
+  background: #f7859d;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-hero-home:hover {
+  background-color: #d6647d;
+  transform: translateY(-3px);
+}
+
 .hero-image {
-  width: 30%;
+  width: 40%;
+  height: 100%;
   text-align: center;
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: 70%;
-  align-self: flex-end;
-  margin-bottom: -2px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Seção de Features (Cards e Vídeo) */
@@ -235,6 +253,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 20%;
   text-decoration: none;
+  transition: all 0.3s ease;
+
 }
 
 .video-card {
@@ -244,14 +264,13 @@ body {
 .feature-card:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
-  transition: all 0.3s ease;
 }
 
 .icon-container-1 {
   display: flex;
   width: 100%;
   background-color: #F7859D;
-  height: 65%;
+  height: 50%;
   justify-content: center;
   align-items: center;
   align-self: center;
@@ -263,7 +282,7 @@ body {
   display: flex;
   width: 100%;
   background-color: #B5BCE4;
-  height: 65%;
+  height: 50%;
   justify-content: center;
   align-items: center;
   align-self: center;
@@ -532,7 +551,6 @@ body {
   width: 90%;
   margin: 90px auto 0 auto;
   font-family: 'Inter', sans-serif;
-  background-color: #F8F9FA;
 }
 
 /* Estilização do cabeçalho */
@@ -721,12 +739,12 @@ body {
   padding: 15px;
   border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .student-card:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
-  transition: all 0.3s ease;
 }
 
 .student-info {
@@ -792,6 +810,12 @@ body {
   cursor: pointer;
   height: 100px;
   margin-bottom: 100px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.add-student-card:hover {
+  transform: translateY(-5px);
 }
 
 .add-icon-wrapper {
@@ -817,11 +841,7 @@ body {
   font-size: 0.9rem;
 }
 
-.add-student-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
-  transition: all 0.3s ease;
-}
+
 
 
 
@@ -833,7 +853,6 @@ body {
   margin: 70px auto 0 auto;
   padding: 40px;
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
 }
 
 /* Card de perfil à esquerda */
@@ -1028,7 +1047,6 @@ body {
   margin: 70px auto 0 auto;
   padding: 40px;
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
   height: 100vh;
 }
 
@@ -1078,7 +1096,6 @@ body {
   margin: 70px auto 0 auto;
   padding: 20px 40px;
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
   min-height: 100vh;
 }
 
@@ -1277,7 +1294,6 @@ body {
   gap: 20px;
   padding: 40px;
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
 }
 
 /* Card de informações à esquerda */
