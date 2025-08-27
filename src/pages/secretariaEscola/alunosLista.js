@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const StudentSearchPage = () => {
     // Estado para controlar a aba de série, turma e status
-    const [activeSeries, setActiveSeries] = useState('1º');
-    const [activeClass, setActiveClass] = useState('A');
+    const [activeSeries, setActiveSeries] = useState('');
+    const [activeClass, setActiveClass] = useState('');
     const [activeStatus, setActiveStatus] = useState('Matrículas');
 
     // Dados mockados para os alunos
@@ -84,10 +84,10 @@ const StudentSearchPage = () => {
 
             {/* Seção de Filtros */}
             <div className="se-filter-section">
-                <h2 className="se-filter-title">Filtros</h2>
+                <h2 className="se-filter-title">Selecione o Ano</h2>
                 {/* Filtros de Série */}
                 <div className="se-filter-group se-series-filters">
-                    {['1º', '2º', '3º', '4º', '5º', '6º', '7º', '8º', '9º'].map(series => (
+                    {['1º Ano', '2º Ano', '3º Ano', '4º Ano', '5º Ano', '6º Ano', '7º Ano', '8º Ano', '9º Ano'].map(series => (
                         <button
                             key={series}
                             className={`se-filter-btn ${activeSeries === series ? 'active' : ''}`}
@@ -99,11 +99,12 @@ const StudentSearchPage = () => {
                 </div>
 
                 {/* Filtros de Turma */}
-                <div className="se-filter-group se-class-filters">
+                <h2 className="se-filter-title">Selecione a Turma</h2>
+                <div className="se-filter-group">
                     {['A', 'B', 'C', 'D', 'E', 'F'].map(className => (
                         <button
                             key={className}
-                            className={`se-filter-btn ${activeClass === className ? 'active' : ''}`}
+                            className={`se-filter-btn-classe ${activeClass === className ? 'active' : ''}`}
                             onClick={() => setActiveClass(className)}
                         >
                             {className}
@@ -111,6 +112,7 @@ const StudentSearchPage = () => {
                     ))}
                 </div>
 
+                <h2 className="se-filter-title">Selecione a Situação da Matrícula</h2>
                 {/* Filtros de Status da Matrícula */}
                 <div className="se-filter-group se-status-filters">
                     {['Matrículas', 'Matrículas Pendentes', 'Matrículas Aprovadas', 'Matrículas em Análise'].map(status => (

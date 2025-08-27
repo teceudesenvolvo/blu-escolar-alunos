@@ -7,7 +7,14 @@ const SideMenu = () => {
   const location = useLocation();
 
   // Rotas onde o menu lateral não deve aparecer
-  const pagesNotViewMenu = ['/login', '/cadastro', '/'];
+  const pagesNotViewMenu = [
+    '/',
+    '/login', 
+    '/cadastro',
+    '/dashboard-se',
+    '/alunos-lista-se',
+    '/informacoes-aluno-secretaria', 
+  ];
 
   // Se a rota atual estiver na lista, não renderize o menu
   if (pagesNotViewMenu.includes(location.pathname)) {

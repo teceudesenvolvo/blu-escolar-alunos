@@ -2,6 +2,12 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
+// Componentes Fixos
+import SideMenu from './componentes/SideMenu';
+import TopMenu from './componentes/TopMenu';
+import Footer from './componentes/Footer';
+import SideMenuSE from './componentes/SideMenuSE';
+
 // Páginas sem Login
 import LandingPage from './pages/semLogin/LandingPage';
 import LoginPage from './pages/semLogin/LoginPage';
@@ -20,10 +26,7 @@ import DashboardSE from './pages/secretariaEscola/dashboardSE';
 import AlunosLista from './pages/secretariaEscola/alunosLista';
 import InfoAluno from './pages/secretariaEscola/infoAlunoSE';
 
-// Componentes Fixos
-import SideMenu from './componentes/SideMenu';
-import TopMenu from './componentes/TopMenu';
-import Footer from './componentes/Footer';
+
 
 
 function App() {
@@ -31,6 +34,7 @@ function App() {
     <BrowserRouter>
       <TopMenu />
       <SideMenu />
+      <SideMenuSE />
       <Routes>
         {/* Without Login */}
         <Route path="/" element={<LandingPage />} />
@@ -46,7 +50,7 @@ function App() {
 
         {/* Páginas Secretaria Escolar */}
         <Route path="/dashboard-se" element={<DashboardSE />} />
-        <Route path="/alunos-lista" element={<AlunosLista />} />
+        <Route path="/alunos-lista-se" element={<AlunosLista />} />
         <Route path="/informacoes-aluno-secretaria" element={<InfoAluno />} />
 
       </Routes>
