@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -145,7 +146,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 95.8%;
+  width: 95%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -182,7 +183,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #7076E8;
+  background: linear-gradient(120deg, #7076E8 10%, #4C50F5 100%);
   color: #fff;
   border-radius: 20px;
   margin: 40px 40px 0 40px;
@@ -200,11 +201,11 @@ body {
 .hero-content h1 {
   font-size: 55px;
   font-weight: 400;
+  margin-bottom: 0px;
 }
 
 .hero-content p {
   font-size: 15px;
-  margin-bottom: -30px;
   width: 70%;
 }
 
@@ -219,6 +220,12 @@ body {
   margin-right: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.btn-hero-home:last-child {
+  background-color: transparent;
+  border: 2px solid #d6647d;
+  color: #fff;
 }
 
 .btn-hero-home:hover {
@@ -381,8 +388,7 @@ body {
 }
 
 .info-image img {
-  max-width: 100%;
-  height: auto;
+  height: 500px;
   border-radius: 12px;
 }
 

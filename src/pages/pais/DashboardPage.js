@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa o hook useNavigate
 import { FiFileText, FiBook, FiBookOpen, FiUsers, FiPlusCircle, FiEdit, FiSearch } from 'react-icons/fi';
-import TeacherImage from '../assets/professora-2.png';
+import TeacherImage from '../../assets/professora-2.png';
 
 // Dados de exemplo para os cards de estatísticas
 const stats = [

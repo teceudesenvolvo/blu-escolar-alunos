@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profileImage from '../assets/teacher.webp';
+import profileImage from '../../assets/teacher.webp';
 
 // Ícones SVG para os botões e abas
 

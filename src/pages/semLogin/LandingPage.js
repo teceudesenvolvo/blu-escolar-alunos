@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Person3d from '../assets/estudante-bolsa.png';
-import Books1 from '../assets/books-1.png';
-import Books2 from '../assets/books-2.webp';
+import Person3d from '../../assets/estudante-bolsa.png';
+import Books1 from '../../assets/books-1.png';
+import Books2 from '../../assets/books-2.webp';
+import ImgPrefeitura from '../../assets/personagem-formado.avif';
 
 function LandingPage() {
     const navigate = useNavigate();
@@ -14,8 +15,8 @@ function LandingPage() {
                 {/* Aqui irá a seção principal da página, com o conteúdo de destaque e os cards */}
                 <section className="hero-section">
                     <div className="hero-content">
-                        <p>A Secretaria Municipal de Educação inovou mais uma vez, agora conseguimos te ajudar a realizar a matrícula do seu filho sem sair de casa.</p>
                         <h1><b>INOVAR E EDUCAR</b> É NOSSA <b>MISSÃO</b></h1>
+                        <p>A Secretaria Municipal de Educação inovou mais uma vez, agora conseguimos te ajudar a realizar a matrícula do seu filho sem sair de casa.</p>
                         <div>
                             <input onClick={() => navigate('/cadastro')} type="button" value="Criar Conta" className="btn-hero-home" />
                             <input onClick={() => navigate('/login')} type="button" value="Login" className="btn-hero-home" />
@@ -60,7 +61,7 @@ function LandingPage() {
                         <a href="#saiba-mais" className="learn-more-link">Saiba Mais</a>
                     </div>
                     <div className="info-image">
-                        <img src="https://placehold.co/600x400/F1F5FE/333333?text=Imagem" alt="Dashboard preview" />
+                        <img src={ImgPrefeitura} alt="Dashboard preview" />
                     </div>
                 </section>
 

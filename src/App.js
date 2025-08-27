@@ -3,20 +3,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Importa as páginas completas que serão renderizadas pelas rotas
-import LandingPage from './pages/LandingPage';
-import LoginPage from './pages/LoginPage';
-import CadastroPage from './pages/CadastroPage';
+import LandingPage from './pages/semLogin/LandingPage';
+import LoginPage from './pages/semLogin/LoginPage';
+import CadastroPage from './pages/semLogin/CadastroPage';
 
-import DashboardPage from './pages/DashboardPage';
-import Perfil from './pages/Perfil';
-import Notificacoes from './pages/Notificacoes';
-import AddStudentPage from './pages/AdicionarAluno';
-import EditStudentPage from './pages/EditarAluno';
+import DashboardPage from './pages/pais/DashboardPage';
+import Perfil from './pages/pais/Perfil';
+import Notificacoes from './pages/pais/Notificacoes';
+import AddStudentPage from './pages/pais/AdicionarAluno';
+import EditStudentPage from './pages/pais/EditarAluno';
 
 // Componentes Fixos
 import SideMenu from './componentes/SideMenu';
 import TopMenu from './componentes/TopMenu';
 import Footer from './componentes/Footer';
+
 
 function App() {
   return (
