@@ -10,7 +10,18 @@ const heartIcon = (
 
 const Footer = () => {
   const location = useLocation();
-  const pagesNotViewFooter = ['/login', '/cadastro', '/dashboard', '/perfil', '/notificacoes', '/pre-matricula-aluno'];
+  const pagesNotViewFooter = [
+    '/login',
+    '/cadastro',
+    '/dashboard', 
+    '/perfil', 
+    '/notificacoes',
+    '/pre-matricula-aluno', 
+    '/dashboard-se', 
+    '/editar-aluno',
+    '/alunos-lista',
+    '/informacoes-aluno-secretaria',
+  ];
 
   // Se a rota atual estiver na lista, não renderize o rodapé
   if (pagesNotViewFooter.includes(location.pathname)) {
