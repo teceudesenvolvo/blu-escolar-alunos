@@ -56,12 +56,12 @@ function App() {
         <Route path="/editar-aluno" element={<EditStudentPage />} />
 
         {/* Páginas Secretaria Escolar */}
-        <Route path="/dashboard-se" element={<DashboardSE />} />
+        <Route path="/se" element={<DashboardSE />} />
         <Route path="/alunos-lista-se" element={<AlunosLista />} />
         <Route path="/informacoes-aluno-secretaria" element={<InfoAluno />} />
 
         {/* Páginas Secretaria Municipal */}
-        <Route path="/dashboard-sm" element={<DashboardSME />} />
+        <Route path="/sm" element={<DashboardSME />} />
         <Route path="/escolas-lista-sm" element={<EscolasLista />} />
         <Route path="/editar-escola-sm/:schoolId" element={<EditSchoolPage />} />
 

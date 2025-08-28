@@ -27,7 +27,7 @@ const SideMenu = () => {
     return (
         <aside className="fixed-nav-bar">
             <NavLink
-                to="/dashboard-se"
+                to="/se"
                 className={({ isActive }) =>
                     "nav-item" + (isActive ? " active" : "")
                 }
