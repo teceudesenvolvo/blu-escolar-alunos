@@ -1,30 +1,26 @@
+// Footer.jsx
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Ícone de coração para a logo do rodapé
 const heartIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart">
-    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
   </svg>
 );
 
 const Footer = () => {
   const location = useLocation();
-  const pagesNotViewFooter = [
-    '/login',
-    '/cadastro',
-    '/dashboard', 
-    '/perfil', 
-    '/notificacoes',
-    '/pre-matricula-aluno', 
-    '/dashboard-se', 
-    '/editar-aluno',
-    '/alunos-lista',
-    '/informacoes-aluno-secretaria',
+  // Páginas onde o rodapé DEVE ser exibido
+  const pagesToShowFooter = [
+    '/',
+    '/ajuda',
+    '/contato',
+    // Adicione outras rotas aqui onde o rodapé deve aparecer
   ];
 
-  // Se a rota atual estiver na lista, não renderize o rodapé
-  if (pagesNotViewFooter.includes(location.pathname)) {
+  // Se a rota atual não estiver na lista, não renderize o rodapé
+  if (!pagesToShowFooter.includes(location.pathname)) {
     return null;
   }
 

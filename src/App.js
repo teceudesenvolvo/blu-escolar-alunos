@@ -31,7 +31,8 @@ import InfoAluno from './pages/secretariaEscola/infoAlunoSE';
 
 // Páginas Secretaria Municipal
 import DashboardSME from './pages/secretariaMunicipal/dashboardSM';
-
+import EscolasLista from './pages/secretariaMunicipal/escolasLista';
+import EditSchoolPage from './pages/secretariaMunicipal/editaEscola';
 
 
 
@@ -61,6 +62,8 @@ function App() {
 
         {/* Páginas Secretaria Municipal */}
         <Route path="/dashboard-sm" element={<DashboardSME />} />
+        <Route path="/escolas-lista-sm" element={<EscolasLista />} />
+        <Route path="/editar-escola-sm/:schoolId" element={<EditSchoolPage />} />
 
       </Routes>
       <Footer />

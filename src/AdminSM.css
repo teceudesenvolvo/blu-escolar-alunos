@@ -162,11 +162,20 @@
     margin-right: 5px;
 }
 
+.sme-year-selector {
+    width: 100px;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .sme-chart-grid {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    padding-left: 5rem; /* Espaço para as labels */
+    padding-left: 5rem;
+    /* Espaço para as labels */
 }
 
 .sme-chart-row {
@@ -179,7 +188,8 @@
     position: absolute;
     left: 0;
     font-size: 0.875rem;
-    width: 4rem; /* Largura fixa para as labels */
+    width: 4rem;
+    /* Largura fixa para as labels */
     text-align: right;
     transform: translateX(-100%);
     padding-right: 0.5rem;
@@ -203,7 +213,8 @@
 
 .sme-bar:nth-child(1),
 .sme-bar:nth-child(2) {
-    background-color: #f472b6; /* Cor específica para Educação Infantil */
+    background-color: #f472b6;
+    /* Cor específica para Educação Infantil */
 }
 
 .sme-bar-axis {
@@ -237,18 +248,663 @@
     text-anchor: middle;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .sme-dashboard-container {
-        padding: 1rem;
-    }
 
-    .sme-tabs-container {
-        flex-direction: column;
+
+
+/* Estilos gerais do container da página */
+.sm-school-page-container {
+    width: 90%;
+    margin: 70px auto 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Estilos do cabeçalho com título e contador */
+.sm-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sm-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.sm-count {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* Estilos dos inputs de pesquisa */
+.sm-search-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sm-input-group {
+    position: relative;
+}
+
+.sm-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #9ca3af;
+}
+
+.sm-input-group input {
+    width: 80%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background-color: #fff;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* Estilos para o grid de cards */
+.sm-school-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Estilos para o card de adicionar escola */
+.sm-add-school-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px dashed #d1d5db;
+    color: #9ca3af;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sm-add-school-card:hover {
+    background-color: #f9fafb;
+}
+
+.sm-add-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para os cards de escola */
+.sm-school-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sm-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sm-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.sm-status-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.sm-status-available {
+    background-color: #10b981;
+    color: #fff;
+}
+
+.sm-status-listed {
+    background-color: #6b7280;
+    color: #fff;
+}
+
+.sm-card-details {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.sm-card-details p {
+    margin: 0.25rem 0;
+}
+
+.sm-edit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sm-edit-btn:hover {
+    background-color: #f3f4f6;
+}
+
+
+
+
+
+
+
+/* =================== Página Edição de Escola =================== */
+
+.sm\:page-container {
+    display: flex;
+    min-height: 100vh;
+    padding: 2rem;
+    gap: 2rem;
+    flex-direction: row;
+    width: 90%;
+    margin: 70px auto 0 auto;
+}
+
+/* =================== Seção Lateral (Sidebar) =================== */
+
+.sm\:sidebar {
+    background-color: #fff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    top: 2rem;
+    height: fit-content;
+    text-align: center;
+}
+
+.sm\:sidebar-card {
+    background-color: var(--card-background);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+}
+
+.sm\:school-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.sm\:application-number {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.sm\:status-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.sm\:listed-status {
+    background-color: var(--tertiary-color);
+}
+
+.sm\:card-title-red {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--red-text);
+    margin: 0;
+}
+
+.sm\:solicitations-list {
+    list-style-type:square;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #e91e63;
+    text-align: left;
+}
+
+.sm\:card-title-chat {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 20px;
+}
+
+.sm\:chat-box {
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.sm\:chat-message {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--red-light-bg);
+    border: 1px solid var(--red-border);
+    position: relative;
+}
+
+.sm\:chat-email {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.sm\:chat-main-text {
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+}
+
+.sm\:chat-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sm\:chat-list li {
+    color: var(--red-text);
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.sm\:chat-time {
+    font-size: 0.625rem;
+    color: var(--text-light);
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.75rem;
+}
+
+.sm\:message-input-container {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.sm\:message-input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    background-color: #F3F3F3;
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 0.875rem;
+    outline: none;
+}
+
+.sm\:send-btn {
+    background-color: #f06292;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sm\:send-btn:hover {
+    background-color: #e91e63;
+}
+
+.sm\:sidebar-footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: auto;
+}
+
+/* =================== Seção Central (Formulário e Abas) =================== */
+
+.sm\:main-content {
+    width: 70%;
+    height: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.sm\:tabs-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sm\:tab-btn {
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 25%;
+}
+
+.sm\:tab-btn:hover {
+    background-color: #e9ecef;
+}
+
+.sm\:tab-btn.sm\:active-tab {
+    background-color: #F7859D;
+    color: #fff;
+}
+
+.sm\:form-container {
+    padding-top: 1rem;
+}
+
+.sm\:data-tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sm\:form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sm\:form-row-grid,
+.sm\:form-row-grid-three {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .sm\:form-row-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .sme-tab-btn {
-        border-radius: 0.5rem;
-        margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+    .sm\:form-row-grid-three {
+        grid-template-columns: repeat(3, 1fr);
     }
+}
+
+.sm\:input-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.sm\:input-field {
+    width: 98%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease;
+    background-color: #F3F3F3;
+}
+
+.sm\:input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.sm\:action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.sm\:btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sm\:primary-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.sm\:secondary-btn {
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+}
+
+.sm\:tab-placeholder {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+/* =================== Aba de Vagas =================== */
+
+.sm\:vacancies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sm\:vacancies-row {
+    display: contents; /* Permite que os filhos participem do grid pai */
+}
+
+.sm\:vacancies-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    justify-self: start;
+    padding: 0.75rem 0;
+}
+
+.sm\:vacancies-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease;
+}
+
+.sm\:vacancies-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* =================== Aba de Usuários =================== */
+
+.sm\:user-card {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sm\:user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    /* Use uma imagem real ou um placeholder aqui */
+    background-image: url('https://placehold.co/50x50/e0e0e0/ffffff?text=User');
+    background-size: cover;
+}
+
+.sm\:user-info {
+    flex-grow: 1;
+}
+
+.sm\:user-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.sm\:user-role {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.sm\:user-date {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+.sm\:user-status-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sm\:user-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    background-color: #e8f5e9;
+    color: #43a047;
+    font-weight: 600;
+}
+
+.sm\:user-edit-icon {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sm\:user-edit-icon:hover {
+    color: var(--primary-color);
+}
+
+.sm\:add-user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 2px dashed #e0e0e0;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.sm\:add-user-card:hover {
+    border-color: var(--primary-color);
+}
+
+.sm\:add-user-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.sm\:add-user-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: var(--text-dark);
+}
+
+.sm\:add-user-subtext {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* =================== Aba de Documentação =================== */
+
+.sm\:documentation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.sm\:doc-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sm\:doc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.sm\:doc-icon {
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+.sm\:doc-text {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.sm\:doc-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-top: 0.25rem;
 }
