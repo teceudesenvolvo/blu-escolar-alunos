@@ -29,6 +29,10 @@ import AlunosLista from './pages/secretariaEscola/alunosLista';
 import InfoAluno from './pages/secretariaEscola/infoAlunoSE';
 
 
+// Páginas Secretaria Municipal
+import DashboardSME from './pages/secretariaMunicipal/dashboardSM';
+
+
 
 
 function App() {
@@ -54,6 +58,9 @@ function App() {
         <Route path="/dashboard-se" element={<DashboardSE />} />
         <Route path="/alunos-lista-se" element={<AlunosLista />} />
         <Route path="/informacoes-aluno-secretaria" element={<InfoAluno />} />
+
+        {/* Páginas Secretaria Municipal */}
+        <Route path="/dashboard-sm" element={<DashboardSME />} />
 
       </Routes>
       <Footer />

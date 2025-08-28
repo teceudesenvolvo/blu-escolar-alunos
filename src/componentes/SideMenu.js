@@ -13,7 +13,7 @@ const SideMenu = () => {
     '/cadastro',
     '/dashboard-se',
     '/alunos-lista-se',
-    '/informacoes-aluno-secretaria', 
+    '/informacoes-aluno-secretaria',
   ];
 
   // Se a rota atual estiver na lista, não renderize o menu

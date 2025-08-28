@@ -16,6 +16,7 @@ const SideMenu = () => {
         '/perfil',  
         '/pre-matricula-aluno',
         '/editar-aluno',
+        '/dashboard-sm',
     ];
 
     // Se a rota atual estiver na lista, não renderize o menu
