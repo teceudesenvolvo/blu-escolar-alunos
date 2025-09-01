@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { FiHome, FiUser, FiUserCheck } from 'react-icons/fi';
+import { FiHome, FiUser, FiAward, FiBell } from 'react-icons/fi';
 
 const SideMenu = () => {
     // Use o hook useLocation para obter a rota atual
@@ -16,9 +16,10 @@ const SideMenu = () => {
         '/perfil',  
         '/pre-matricula-aluno',
         '/editar-aluno',
-        '/sm',
-        '/editar-escola-sm',
-        '/enviar-notificacoes-sm'
+        '/se',
+        '/alunos-lista-se',
+        '/editar-aluno-se',
+        '/informacoes-aluno-secretaria'
     ];
 
     // Se a rota atual estiver na lista, não renderize o menu
@@ -29,7 +30,7 @@ const SideMenu = () => {
     return (
         <aside className="fixed-nav-bar">
             <NavLink
-                to="/se"
+                to="/sm"
                 className={({ isActive }) =>
                     "nav-item" + (isActive ? " active" : "")
                 }
@@ -38,13 +39,22 @@ const SideMenu = () => {
                 <span className="nav-text">Início</span>
             </NavLink>
             <NavLink
-                to="/alunos-lista-se"
+                to="/escolas-lista-sm"
                 className={({ isActive }) =>
                     "nav-item" + (isActive ? " active" : "")
                 }
             >
-                <FiUserCheck className="nav-icon" />
-                <span className="nav-text">Alunos</span>
+                <FiAward className="nav-icon" />
+                <span className="nav-text">Escolas</span>
+            </NavLink>
+            <NavLink
+                to="/enviar-notificacoes-sm"
+                className={({ isActive }) =>
+                    "nav-item" + (isActive ? " active" : "")
+                }
+            >
+                <FiBell className="nav-icon" />
+                <span className="nav-text">Notificacoes</span>
             </NavLink>
             <NavLink
                 to="/perfil"

@@ -9,6 +9,7 @@ import SideMenu from './componentes/SideMenu';
 import TopMenu from './componentes/TopMenu';
 import Footer from './componentes/Footer';
 import SideMenuSE from './componentes/SideMenuSE';
+import SideMenuSM from './componentes/SideMenuSM'
 
 // Páginas sem Login
 import LandingPage from './pages/semLogin/LandingPage';
@@ -33,6 +34,7 @@ import InfoAluno from './pages/secretariaEscola/infoAlunoSE';
 import DashboardSME from './pages/secretariaMunicipal/dashboardSM';
 import EscolasLista from './pages/secretariaMunicipal/escolasLista';
 import EditSchoolPage from './pages/secretariaMunicipal/editaEscola';
+import SendNotifications from './pages/secretariaMunicipal/enviarNotificacoes';
 
 
 
@@ -42,6 +44,7 @@ function App() {
       <TopMenu />
       <SideMenu />
       <SideMenuSE />
+      <SideMenuSM />
       <Routes>
         {/* Without Login */}
         <Route path="/" element={<LandingPage />} />
@@ -64,6 +67,7 @@ function App() {
         <Route path="/sm" element={<DashboardSME />} />
         <Route path="/escolas-lista-sm" element={<EscolasLista />} />
         <Route path="/editar-escola-sm/:schoolId" element={<EditSchoolPage />} />
+        <Route path="/enviar-notificacoes-sm" element={<SendNotifications />} />
 
       </Routes>
       <Footer />

@@ -11,9 +11,15 @@ const SideMenu = () => {
     '/',
     '/login', 
     '/cadastro',
-    '/dashboard-se',
+    '/se',
     '/alunos-lista-se',
     '/informacoes-aluno-secretaria',
+    '/editar-aluno-se',
+    '/lista-alunos-se',
+    '/enviar-notificacoes-sm',
+    '/editar-escola-sm',
+    '/sm',
+    '/escolas-lista-sm'
   ];
 
   // Se a rota atual estiver na lista, não renderize o menu
