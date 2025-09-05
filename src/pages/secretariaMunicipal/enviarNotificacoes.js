@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BellIcon, PlusCircle, Trash2 } from 'lucide-react';
+import { BellIcon,  Trash2 } from 'lucide-react';
 
 const Notify = () => {
   const [selectedRecipient, setSelectedRecipient] = useState('Pais');
@@ -93,10 +93,7 @@ const Notify = () => {
       <div className="sm-sent-notifications-section">
         <h3 className="sm-section-title">Notificações Enviadas</h3>
         <div className="sm-notifications-grid">
-          <div className="sm-add-notification-card">
-            <PlusCircle size={48} />
-            <span>Adicionar Nova Notificação</span>
-          </div>
+         
           {notifications.map(notif => (
             <div key={notif.id} className="sm-notification-card">
               <span className="sm-notification-status">{notif.status}</span>
